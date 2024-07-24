@@ -15,13 +15,6 @@ if CLIENT then
         weight = 500
     })
 
-    -- Function to generate a rainbow color
-    local function getRainbowColor(t)
-        local r = math.sin(t + 0) * 127 + 128
-        local g = math.sin(t + 2) * 127 + 128
-        local b = math.sin(t + 4) * 127 + 128
-        return Color(r, g, b)
-    end
 
     -- Function to format time using the utime library
     local function formatTime(seconds)
