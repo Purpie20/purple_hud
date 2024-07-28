@@ -23,12 +23,6 @@ if CLIENT then
         end
     end
 
-    -- Function to check if the scoreboard (TAB menu) is open
-    local function isScoreboardOpen()
-        local scoreboardPanel = vgui.GetWorldPanel():GetChild(0)
-        return IsValid(scoreboardPanel) and scoreboardPanel:IsVisible()
-    end
-
     -- Enhanced boxy bar function
     local function drawBoxyBar(x, y, width, height, percentage, color)
         -- Background bar
@@ -93,7 +87,7 @@ if CLIENT then
         leftX = leftX + surface.GetTextSize(healthText) + padding
 
         local healthColor = Color(255, 0, 0, 255) -- Main color for health
-        drawBoxyBar(leftX, textY + 4, healthBarWidth, 12, health, healthColor)
+        drawBoxyBar(leftX, startY + (barHeight / 2) - 6, healthBarWidth, 12, health, healthColor)
         leftX = leftX + healthBarWidth + padding
 
         -- Draw armor with boxy style
@@ -102,7 +96,7 @@ if CLIENT then
         leftX = leftX + surface.GetTextSize(armorText) + padding
 
         local armorColor = Color(0, 0, 255, 255) -- Main color for armor
-        drawBoxyBar(leftX, textY + 4, armorBarWidth, 12, armor, armorColor)
+        drawBoxyBar(leftX, startY + (barHeight / 2) - 6, armorBarWidth, 12, armor, armorColor)
 
         -- Right-aligned elements
         local rightX = ScrW() - padding
